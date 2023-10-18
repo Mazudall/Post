@@ -14,7 +14,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at','desc')->get();
         $tags = Tag::all();
 
 
@@ -56,22 +56,18 @@ class PostController extends Controller
     public function update(UpdateRequest $request,Post $post)
     {
         $data = $request->validated();
-
         $tags = $data['tags'];
         unset($data['tags']);
 
         $post->update($data);
         $post->tags()->sync($tags);
 
-        return redirect()->route('post.show');
+
+        return redirect()->route('post.show',$post->id);
     }
 
     public function show(Post $post)
     {
-        $post = Post::with('tags')->first();
-
-
-
         return view('post.show',compact('post'));
     }
 

@@ -17,8 +17,8 @@
 </div>
     </a>
 <div>
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="d-flex" role="search" method="get" action="{{route('search')}}">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </div>
@@ -51,7 +51,7 @@
         <li><a href="#">Programming</a></li>
         <li><a href="#">Administration</a></li>
         <li><a href="#">News</a></li>
-        <li><a href="#">Design</a></li>
+        <li><a href="{{route('post.create')}}">Create Post</a></li>
 
     </ul>
 </div>

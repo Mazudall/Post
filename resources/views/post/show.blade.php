@@ -2,14 +2,20 @@
 @section('content')
 
 <div class="show_post">
+    <a  href="{{route('post.edit',$post->id)}}">
+        <div id="update_post">Update Post</div>
+    </a>
 
     <div class="show_tittle" id="show_title">{{$post->title}}</div>
     <div class="show_content">{{$post->content}}</div>
 
-    @foreach($post->tags as $tag)
-        <div>{{$tag->title}}</div>
-    @endforeach
 
+        <div><label>Tags:</label>
+            @foreach($post->tags as $pTag)
+            {{$pTag->title}}
+        </div>
+    @endforeach
+    <div>-----------</div>
 
 </div>
 
