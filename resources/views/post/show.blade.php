@@ -13,8 +13,9 @@
         <div><label>Tags:</label>
             @foreach($post->tags as $pTag)
             {{$pTag->title}}
-        </div>
+
     @endforeach
+        </div>
     <div>-----------</div>
 
 </div>
