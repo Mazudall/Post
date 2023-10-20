@@ -28,7 +28,12 @@ Route::get('/main/posts/create',[PostController::class,'create'])->name('post.cr
 Route::post('/main/posts',[PostController::class,'store'])->name('post.store');
 Route::get('/main/{post}',[PostController::class,'show'])->name('post.show');
 Route::get('/main/posts/{post}/edit',[PostController::class,'edit'])->name('post.edit');
-Route::patch('main/posts/{post}',[PostController::class,'update'])->name('post.update');
+Route::patch('/main/posts/{post}',[PostController::class,'update'])->name('post.update');
+Route::delete('/main/posts/{post}',[PostController::class,'destroy'])->name('post.delete');
+
+
+
+
+
 
 Route::get('main/posts/update',[PostController::class,'update']);
-Route::get('main/posts/delete',[PostController::class,'delete']);

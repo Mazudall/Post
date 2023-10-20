@@ -94,8 +94,15 @@ ul {
     height: 100rem;
 
 }
-#update_post{
-    border-style: dashed;
-    width: 6rem;
-    text-align: left;
+
+.post_act{
+    margin-left: 10px;
+    float: left;
+    display: flex;
+    gap: 50rem;
+}
+
+.post_body{
+    margin-top: 5rem;
+
 }
